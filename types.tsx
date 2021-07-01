@@ -3,9 +3,11 @@
  * https://reactnavigation.org/docs/typescript/
  */
 
-export type RootStackParamList = {
+ export type RootStackParamList = {
   Root: undefined;
   NotFound: undefined;
+  Contact: undefined;
+  ChatRoom: undefined;
 };
 
 export type MainTabParamList = {
@@ -27,17 +29,18 @@ export type User = {
   id: String;
   name: String;
   imageUri: String;
+  status: String;
 }
 
 export type Message = {
   id: String;
   content: string;
   createdAt: string;
-
+  user: User;
 }
 
 export type ChatRoom = {
   id: string;
   users: User[];
   lastMessage: Message;
-} 
+}
