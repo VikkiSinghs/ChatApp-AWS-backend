@@ -1,1 +1,10 @@
-{}
+{
+  "auth": {
+    "indi4a662dee": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
