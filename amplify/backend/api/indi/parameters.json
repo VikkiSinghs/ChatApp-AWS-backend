@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "indi",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authindi4a662dee",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
