@@ -7,12 +7,14 @@ import style from '../ChatListItem/style';
 
 export type ChatMessageProps = {
     message: Message;
+    myId: String,
+
 }
 const ChatMessage = (props: ChatMessageProps) => {
-    const {message} = props;
+    const { message, myId } = props;
 
     const isMyMessage = () => {
-        return message.user.id === 'u1';
+        return message.user.id === myId;
     }
     return (
         <View style={styles.container}>

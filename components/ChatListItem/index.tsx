@@ -16,7 +16,8 @@ export type ChatListItemProps = {
 const ChatListItem = (props: ChatListItemProps) => {
     const { chatRoom } = props;
     const [ otherUser, setOtherUser] = useState(null);
-
+    // console.log(chatRoom);
+    
     const navigation = useNavigation();
     // const user = chatRoom.chatRoomUsers.item[0].user;
 
@@ -52,8 +53,13 @@ const ChatListItem = (props: ChatListItemProps) => {
 
                     <View style={styles.midContainer}>
                         <Text style={styles.username}>{otherUser.name}</Text>
-                         <Text numberOfLines={2} style={styles.lastMessage}>{chatRoom.lastMessage ? chatRoom.lastMessage.content : ""}</Text>
-          
+                        <Text
+                        numberOfLines={2}
+                        style={styles.lastMessage}>
+                        {chatRoom.lastMessage
+                          ? `${chatRoom.lastMessage.user.name}: ${chatRoom.lastMessage.content}`
+                        : ""}
+                        </Text>          
                     </View>
                 </View>
 
